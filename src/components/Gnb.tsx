@@ -9,6 +9,8 @@ const GnbWrapper = styled.div`
   height: 80px;
   position: relative;
   border-bottom: 1px solid #efefef;
+  position: fixed;
+  background-color: white;
 `;
 
 const NavItem = styled.li<{ h?: boolean }>`

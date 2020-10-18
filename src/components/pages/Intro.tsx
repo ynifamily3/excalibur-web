@@ -2,14 +2,7 @@ import React from "react";
 import Gnb from "../Gnb";
 import Footer from "../Footer";
 import styled from "styled-components";
-
-const Article = styled.article`
-  width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  min-height: calc(100vh - 160px);
-`;
+import { Article } from "../layout";
 
 const P = styled.p`
   margin: 0;
