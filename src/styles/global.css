@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+*::selection {
+  background-color: rgb(178, 224, 223);
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: Youth, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
