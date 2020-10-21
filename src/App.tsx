@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import "normalize.css";
 import "./styles/global.css";
 import Modal from "./components/Modal";
@@ -10,10 +10,10 @@ function App() {
   return (
     <ModalContextProvider>
       <Modal />
-      <HashRouter>
+      <BrowserRouter>
         <Route exact key="/" path="/" component={Intro} />
         <Route exact key="/privacy" path="/privacy" component={Privacy} />
-      </HashRouter>
+      </BrowserRouter>
     </ModalContextProvider>
   );
 }
