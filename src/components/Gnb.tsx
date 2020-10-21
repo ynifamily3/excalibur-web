@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Content, NavList } from "./layout";
-import { ExcaliburLogo } from "../components/svg";
+import { ExcaliburLogo, MenuIcon } from "../components/svg";
+import { useMediaQuery } from "beautiful-react-hooks";
+import { useModal } from "../hooks";
 
 const GnbWrapper = styled.div`
   width: 100%;
@@ -11,6 +13,9 @@ const GnbWrapper = styled.div`
   border-bottom: 1px solid #efefef;
   position: fixed;
   background-color: white;
+  @media (max-width: 1080px) {
+    height: 50px;
+  }
 `;
 
 const NavItem = styled.li<{ h?: boolean }>`
@@ -25,18 +30,54 @@ const NavItem = styled.li<{ h?: boolean }>`
   background-color: ${(props) => props.h && "rgb(178, 224, 223);"};
 `;
 
+const MenuIconButton = styled.div`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+  }
+`;
+
 const Gnb: React.FC = () => {
+  const isSmall = useMediaQuery("(max-width: 1080px)");
+  const { setAndOpen } = useModal();
   return (
     <GnbWrapper>
-      <Content style={{ paddingLeft: "15px" }}>
-        <Link to="/" style={{ textDecoration: "none", height: "74px" }}>
-          <ExcaliburLogo width="200" height="74" />
+      <Content
+        style={{
+          paddingLeft: "15px",
+          display: "flex",
+          justifyContent: !isSmall ? "center" : "space-between",
+        }}
+      >
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            width: "200px",
+            height: !isSmall ? "74px" : "50px",
+          }}
+        >
+          <ExcaliburLogo width="200" height={!isSmall ? "74" : "50"} />
         </Link>
-        <NavList>
-          <NavItem>엑스칼리버 소개</NavItem>
-          <NavItem>공지사항</NavItem>
-          <NavItem h={true}>고객센터</NavItem>
-        </NavList>
+        {!isSmall ? (
+          <NavList>
+            <NavItem>엑스칼리버 소개</NavItem>
+            <NavItem>공지사항</NavItem>
+            <NavItem h={true}>고객센터</NavItem>
+          </NavList>
+        ) : (
+          <MenuIconButton
+            onClick={() => {
+              setAndOpen(<div>hi!</div>);
+            }}
+          >
+            <MenuIcon />
+          </MenuIconButton>
+        )}
       </Content>
     </GnbWrapper>
   );

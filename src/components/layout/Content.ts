@@ -4,7 +4,7 @@ const Content = styled.div`
   display: flex;
   height: 100%;
   margin: 0 auto;
-  width: 1080px;
+  max-width: 1080px;
   justify-content: center;
   align-items: center;
 `;
