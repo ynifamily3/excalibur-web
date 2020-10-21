@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Excalibur는 강의자와 수강생을 위한 강의 Lock-in 도우미입니다."
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <style>
+      @font-face {
+        font-family: Youth;
+        src: url(Youth.ttf) format("truetype");
+      }
+    </style>
+    <title>Excalibur | SwordMaster</title>
+  </head>
+  <body>
+    <script>
+      (function (l) {
+        alert(l);
+        window.history.replaceState(
+          null,
+          null,
+          l.pathname.slice(0, -1) +
+            (q.p || "") +
+            (q.q ? "?" + q.q : "") +
+            l.hash
+        );
+      })(window.location);
+    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
