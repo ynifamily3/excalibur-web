@@ -23,11 +23,7 @@
     <script>
       (function (l) {
         alert(l);
-        window.history.replaceState(
-          null,
-          null,
-          l.pathname.slice(0, -1) + l.hash
-        );
+        window.history.replaceState(null, null, l.pathname + l.hash);
       })(window.location);
     </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
