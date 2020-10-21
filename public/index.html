@@ -20,6 +20,11 @@
     <title>Excalibur | SwordMaster</title>
   </head>
   <body>
+    <script>
+      (function (l) {
+        window.history.replaceState(null, null, l.pathname + l.hash);
+      })(window.location);
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
